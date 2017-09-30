@@ -12,13 +12,13 @@ class Preview {
     private final int width;
     private final int height;
 
-    Preview(final Camera.Parameters params) {
+    Preview(Camera.Parameters params) {
         // Set up preview callback
         format = params.getPreviewFormat();
-        final Camera.Size previewSize = params.getPreviewSize();
+        Camera.Size previewSize = params.getPreviewSize();
         width = previewSize.width;
         height = previewSize.height;
-        final int bytesPerPixel = ImageFormat.getBitsPerPixel(format) / 8;
+        int bytesPerPixel = ImageFormat.getBitsPerPixel(format) / 8;
         // According to the documentation the buffer size can be
         // calculated by width * height * bytesPerPixel. However, this
         // returned an error saying it was too small. It always needed
