@@ -110,7 +110,7 @@ class MJpegHttpStreamer {
             try {
                 acceptAndStream();
             } catch (IOException e) {
-                System.err.println(e);
+                e.printStackTrace();
             }
         }
     }
@@ -185,21 +185,21 @@ class MJpegHttpStreamer {
                 try {
                     stream.close();
                 } catch (IOException e) {
-                    System.err.println(e);
+                    e.printStackTrace();
                 }
             }
             if (socket != null) {
                 try {
                     socket.close();
                 } catch (IOException e) {
-                    System.err.println(e);
+                    e.printStackTrace();
                 }
             }
             if (serverSocket != null) {
                 try {
                     serverSocket.close();
                 } catch (IOException e) {
-                    System.err.println(e);
+                    e.printStackTrace();
                 }
             }
         }
